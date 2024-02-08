@@ -1,101 +1,137 @@
-/* Add your CSS styles here */
+/* Base styles */
+body, h1, h2, nav ul, nav ul li, main, footer {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #90C7E3;
 }
 
 header, nav, main, footer {
-    margin: 0;
-    padding: 0;
+    display: block;
+    width: 100%;
 }
 
 header {
     background: navy;
     color: white;
-    padding: 10px 20px;
-}
-
-header h1 {
-    margin: 0;
+    padding: 1em;
+    text-align: center;
 }
 
 nav {
-    background: lightblue;
-    padding: 10px 20px;
+    background-color: white;
+    text-align: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
     color: darkblue;
-}
-
-nav ul li a.active {
-    color: white;
+    display: block;
 }
 
 main {
-    padding: 20px;
-}
-
-main h2 {
-    color: darkblue;
-}
-
-.yurt-info {
-    margin-bottom: 20px;
+    padding: 1em;
 }
 
 footer {
     background: navy;
     color: white;
-    padding: 10px 20px;
     text-align: center;
+    padding: 1em;
 }
 
-footer p {
-    margin: 0;
+/* Media queries for Medium display */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        border: none;
+    }
+
+    main {
+        width: 80%;
+        margin: auto;
+    }
 }
 
-footer a {
-    color: lightblue;
-    text-decoration: none;
+/* Media queries for Large display */
+@media (min-width: 1024px) {
+    body {
+        background-image: linear-gradient(to bottom, #FFFFFF 20%, #90C7E3 60%, #FFFFFF 100%);
+    }
+
+    header, nav, main, footer {
+        width: 80%;
+        margin: auto;
+    }
+
+    nav ul {
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        width: auto;
+        padding: 1em;
+    }
+
+    nav a {
+        padding: 0.5em;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+
+    /* Additional styles for larger displays */
+    header h1 {
+        font-size: 2em;
+    }
+
+    main h2 {
+        font-size: 1.5em;
+    }
 }
 
-footer p {
-    margin: 0;
-    padding: 5px;
+/* Styles for telephone number display */
+#mobile {
+    display: inline;
 }
 
-/* Responsive Image Handling */
-img {
-    max-width: 100%;
-    height: auto;
+#desktop {
+    display: none;
 }
 
-/* Add more styles based on your specific needs */
+/* Reverse the display properties for larger screens */
+@media (min-width: 600px) {
+    #mobile {
+        display: none;
+    }
 
-/* For active navigation styling */
-nav ul li a.active {
-    background-color: darkblue;
-    color: white;
+    #desktop {
+        display: inline;
+    }
 }
 
-/* Style for the yurt information sections */
-.yurt-info h3 {
-    color: navy;
-}
-
-.yurt-info p {
-    line-height: 1.6;
-}
-
-/* You can add more styles and media queries as needed */
